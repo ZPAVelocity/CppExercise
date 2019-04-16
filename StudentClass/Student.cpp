@@ -6,10 +6,18 @@ using namespace std;
 
 Student::Student()
 {
-    this->id = id;
-    this->name = name;
-    this->age = age;
-    this->gender = gender;
+    this->id = "NULL";
+    this->name = "NULL";
+    this->age = -1;
+    this->gender = "NULL";
+}
+
+Student::Student(const Student &stu)
+{
+    this->id = stu.id;
+    this->name = stu.name;
+    this->age = stu.age;
+    this->gender = stu.gender;
 }
 
 Student::Student(string id, string name, short age, string gender)
@@ -24,24 +32,32 @@ Student::~Student()
 {
 }
 
-void Student::getId()
+string Student::getId()
 {
-    cout << this->id << endl;
+    return this->id;
 }
 
-void Student::getName()
+string Student::getName()
 {
-    cout << this->name << endl;
+    return this->name;
 }
 
-void Student::getAge()
+short Student::getAge()
 {
-    cout << this->age << endl;
+    return this->age;
 }
 
-void Student::getGender()
+void Student::showInfo()
 {
-    cout << this->gender << endl;
+    cout << "id: " << this->getId() << endl;
+    cout << "name: " << this->getName() << endl;
+    cout << "age: " << this->getAge() << endl;
+    cout << "gender: " << this->getGender() << endl;
+}
+
+string Student::getGender()
+{
+    return this->gender;
 }
 
 void Student::setId(string id)
@@ -64,18 +80,83 @@ void Student::setGender(string gender)
     this->gender = gender;
 }
 
-void Student::writeStutoFile(const char *filename, Student *stu)
+void Student::writeStuToFile(const char *filename)
 {
     ofstream outfile;
-    outfile.open("stu.dat");
-    outfile << stu << endl;
+    outfile.open("stu.dat", ios::app);
+    outfile << id << "\n"
+            << name << "\n"
+            << age << "\n"
+            << gender << endl;
     outfile.close();
 }
 
-Student Student::readStufromFile(const char *filename, Student *stu)
+void Student::readStuFromFile(const char *filename)
 {
     ifstream infile;
-    infile.open("stu.dat");
-    //infile >> stu;
+    infile.open("stu.dat", ios::in);
+
+    string id;
+    infile >> id;
+    this->setId(id);
+
+    string name;
+    infile >> name;
+    this->setName(name);
+
+    short age;
+    infile >> age;
+    this->setAge(age);
+
+    string gender;
+    infile >> gender;
+    this->setGender(gender);
+
     infile.close();
+}
+
+bool writeStuArrayToFile(const char *filename, Student *stu, int num)
+{
+    ofstream outfile;
+    outfile.open(filename, ios::app);
+
+    for (int i = 0; i < num + 1; i++)
+    {
+        outfile << stu[i].getId() << endl;
+        outfile << stu[i].getName() << endl;
+        outfile << stu[i].getAge() << endl;
+        outfile << stu[i].getGender() << endl;
+    }
+
+    outfile.close();
+
+    return true;
+}
+
+bool readStuArrayFromFile(const char *filename, Student *stu, int num)
+{
+    ifstream infile;
+    infile.open(filename, ios::app);
+    for (int i = 0; i < num + 1; i++)
+    {
+        string id;
+        infile >> id;
+        stu[i].setId(id);
+
+        string name;
+        infile >> name;
+        stu[i].setName(name);
+
+        short age;
+        infile >> age;
+        stu[i].setAge(age);
+
+        string gender;
+        infile >> gender;
+        stu[i].setGender(gender);
+    }
+
+    infile.close();
+
+    return true;
 }

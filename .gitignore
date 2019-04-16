@@ -31,5 +31,6 @@
 *.out
 *.app
 
-# dat
+# Custom
 *.dat
+.vscode
