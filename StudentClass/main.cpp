@@ -19,11 +19,9 @@ int main()
     string name;
     short age;
     string gender;
-
-    cout << "Input id, name, age and gender of stu1 student." << endl;
-
     int n = 0;
-
+    
+    cout << "Input id, name, age and gender of stu1 student." << endl;
     for (n = 0; n < ARRAY_NUM; n++)
     {
         cin >> id >> name >> age >> gender;
@@ -37,19 +35,22 @@ int main()
         cin >> flag;
         if (flag == false)
             break;
+        cout << "Input id, name, age and gender of stu1 student." << endl;
     }
 
+    cout << "Write stu1 to file" << endl;
     for (int i = 0; i <= n; i++)
     {
         cout << "----------" << i + 1 << "----------" << endl;
         stu1[i].showInfo();
         cout << "---------------------" << endl;
     }
-    
+
     writeStuArrayToFile("stu.dat", stu1, n);
 
     Student stu2[ARRAY_NUM];
 
+    cout << "Read file info to stu2" << endl;
     readStuArrayFromFile("stu.dat", stu2, n);
 
     for (int i = 0; i <= n; i++)

@@ -39,7 +39,7 @@ public:
   void readStuFromFile(const char *filename); // 将文件中的学生信息读入对象
 };
 
-bool writeStuArrayToFile(const char *filename, Student *stu, int num);
-bool readStuArrayFromFile(const char *filename, Student *stu, int num);
+bool writeStuArrayToFile(const char *filename, Student *stu, int num);  // 将学生对象数组的学生信息写入文件
+bool readStuArrayFromFile(const char *filename, Student *stu, int num); // 将文件中的学生信息读入学生对象数组
 
 #endif

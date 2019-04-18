@@ -84,9 +84,9 @@ void Student::writeStuToFile(const char *filename)
 {
     ofstream outfile;
     outfile.open("stu.dat", ios::app);
-    outfile << id << "\n"
-            << name << "\n"
-            << age << "\n"
+    outfile << id << endl
+            << name << endl
+            << age << endl
             << gender << endl;
     outfile.close();
 }
