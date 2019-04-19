@@ -24,7 +24,7 @@ public:
   void operator=(const char *s);       // 对运算符=重载
   CString operator+(const CString &s); // 对运算符+重载返回String对象
   CString operator+(const char *s);    // 对运算符+重载返回String对象
-  char &operator[](int index);         // 对运算符[]重载
+  char &operator[](int index);         // 对运算符[]重载修改index字符的引用
 };
 
 CString operator+(const char *s1, const CString &s2);

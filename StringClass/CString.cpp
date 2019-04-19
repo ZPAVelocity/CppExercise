@@ -23,7 +23,7 @@ CString::CString(const char *s)
 
 CString::~CString()
 {
-    delete this->ptrStr;
+    delete[] this->ptrStr;
 }
 
 int CString::getLenStr()
@@ -43,7 +43,7 @@ void CString::show()
 
 void CString::operator=(const CString &s)
 {
-    delete this->ptrStr;
+    delete[] this->ptrStr;
     this->lenStr = s.lenStr;
     this->ptrStr = new char[this->lenStr + 1];
     strcpy(this->ptrStr, s.ptrStr);
@@ -51,7 +51,7 @@ void CString::operator=(const CString &s)
 
 void CString::operator=(const char *s)
 {
-    delete this->ptrStr;
+    delete[] this->ptrStr;
     this->lenStr = strlen(s);
     this->ptrStr = new char[this->lenStr + 1];
     strcpy(this->ptrStr, s);
