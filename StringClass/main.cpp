@@ -4,12 +4,24 @@
 using namespace std;
 int main()
 {
-    CString x("Hello,");
+    CString x("Hello, ");
     CString y;
 
     y = "World";
     y.show();
 
+    CString z;
+    z = x + y;
+    z.show();
+
+    z = x + "OOP. ";
+    z.show();
+
+    z = "OOP, " + y;
+    z.show();
+
+    x[0] = 'h';
+    x.show();
 
     return 0;
 }
