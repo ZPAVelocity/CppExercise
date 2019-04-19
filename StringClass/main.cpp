@@ -1,10 +1,15 @@
-#include "String.h"
+#include <iostream>
+#include "CString.h"
 
+using namespace std;
 int main()
 {
-    char c[10] = "hello";
-    String s1(c), s2("2000"), s3;
-    s3 = s1 + "fasdfas";
-    s3.show();
+    CString x("Hello,");
+    CString y;
+
+    y = "World";
+    y.show();
+
+
     return 0;
 }
