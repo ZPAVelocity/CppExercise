@@ -2,10 +2,10 @@
 My C++ projects exercise. 
   C++面向对象联系程序
 # Complex
-## 一个复数类
+一个复数类
 
 # DynamicNew
-## 动态申请内存
+动态申请内存
 编写一个函数用于为一个二维数组申请空间，该函数的原型为：
 `double ** RequestAMatrix(int row,int col);`
 其中函数的两个参数规定了二维数组的行数和列数。有了此函数，当需要一个二维数组时，不再需要如下的语句(比如要定义一个200x100的二维数组)：
@@ -14,7 +14,7 @@ My C++ projects exercise.
 `double **x= RequestAMatrix(200,100);`
 
 # SeqList
-## 线性表
+线性表
 创空间一个线性表类并提供增删改查的方法
 # Static
 静态变量的使用
@@ -23,7 +23,7 @@ My C++ projects exercise.
 设计一个字符串类
   
 # StudentClass
-## 基本类的使用
+基本类的使用
 1. 任务：
 设计一个学生类，包括学生如下信息：学号、姓名、性别、年龄（或：出生日期、英语成绩、数据成绩、学生简历）。
 2. 要求：
