@@ -22,7 +22,6 @@ public:
   Student(string id, string name, short age, string gender);
   ~Student();
 
-public:
   string getId();     // 返回对象的id
   string getName();   // 返回对象的name
   short getAge();     // 返回对象的age
