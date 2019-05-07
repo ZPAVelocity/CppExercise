@@ -47,17 +47,17 @@ short Student::getAge()
     return this->age;
 }
 
+string Student::getGender()
+{
+    return this->gender;
+}
+
 void Student::showInfo()
 {
     cout << "id: " << this->getId() << endl;
     cout << "name: " << this->getName() << endl;
     cout << "age: " << this->getAge() << endl;
     cout << "gender: " << this->getGender() << endl;
-}
-
-string Student::getGender()
-{
-    return this->gender;
 }
 
 void Student::setId(string id)
