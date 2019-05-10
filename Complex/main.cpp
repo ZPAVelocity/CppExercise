@@ -1,19 +1,14 @@
+#include "Complex.h"
 #include <iostream>
 using namespace std;
 
-class Complex
+int main()
 {
-public:
-    double im;
-    double re;
-    Complex();
-    Complex(double re, double im);
-    Complex operator+(const Complex c);
-    Complex operator+(const double c);
-    void show();
-};
-
-Complex::Complex(double re, double )
-{
-    
+    Complex a(1, -7);
+    Complex b(3, 3);
+    (a + b).show();
+    (a - b).show();
+    (a * b).show();
+    (a / b).show();
+    return 0;
 }
