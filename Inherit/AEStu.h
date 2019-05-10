@@ -5,7 +5,7 @@
 
 class AEStu : public Student
 {
-protected:
+private:
     const string majorName = "Automation Engineering";
     const string majorId = "001";
     int pacScore; // Principle of Automatic Control Score

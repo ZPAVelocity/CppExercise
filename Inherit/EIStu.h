@@ -5,7 +5,7 @@
 
 class EIStu : public Student
 {
-protected:
+private:
     const string majorName = "Electronic Information Student";
     const string majorId = "002";
     int ssScore; // Signals and Systems Score
